@@ -1,28 +1,80 @@
 <!DOCTYPE html>
-
-<head>
-
-<h1 style="position:relative; left:500px; color:#2B2D42; font-family:Comic Sans MS;"> sxyguy2002 </h1>
-
-</head>
-        <style>
-            html, body {
-                width: 1400px;
-                margin: 0;
-                padding: 0;
-                background-image: linear-gradient(#DBC7BE, #EF959C);
-            }
-
-        </style>
-<body>
-        <!-- SCM Music Player https://www.scmplayer.net -->
-<script type="text/javascript" src="https://www.scmplayer.net/script.js" 
-data-config="{'skin':'https://static.tumblr.com/su8juwr/FzRmwkxge/swagpreto.css','volume':50,'autoplay':true,'shuffle':true,'repeat':1,'placement':'top','showplaylist':false,'playlist':[{'title':'So Inagawa - Elsewhere','url':'https://www.youtube.com/watch?v=9h1-jYFwsFE&list=PLYhnxT0B1eAh1PFDuGQbxWP_6JsjH-jhW&index=4'},{'title':'Mall Grab - Liverpool Street In The Rain [LFT001]','url':'https://www.youtube.com/watch?v=9gDnGxcB0TU&list=PLYhnxT0B1eAh1PFDuGQbxWP_6JsjH-jhW&index=6'},{'title':'Hiroshi Yoshimura - Wet Land','url':'https://www.youtube.com/watch?v=fTiyi0q37io&list=PLYhnxT0B1eAh1PFDuGQbxWP_6JsjH-jhW&index=7'},{'title':'AshTreJinkins- Aging','url':'https://www.youtube.com/watch?v=8grO1jGI_Xc&list=PLYhnxT0B1eAh1PFDuGQbxWP_6JsjH-jhW&index=8'},{'title':'Mood II Swing - Move Me (Original Mix)','url':'https://www.youtube.com/watch?v=_RC5AZOdU1Q&list=PLYhnxT0B1eAh1PFDuGQbxWP_6JsjH-jhW&index=9'},{'title':'Moodymann - I Can%27t Kick This Feeling When It Hits','url':'https://www.youtube.com/watch?v=ik9cExHOazw&list=PLYhnxT0B1eAh1PFDuGQbxWP_6JsjH-jhW&index=15'},{'title':'The System %u200E-- You%27re In My System (Kerri Chandler Remix)','url':'https://www.youtube.com/watch?v=_xVCm_b7Vcs&list=PLXPswtUOMTkNHjTZBNUsXl0tYXuRNpZtA&index=4'},{'title':'theo parrish - lost angel','url':'https://www.youtube.com/watch?v=L2aUMxR2tUo&list=PLXPswtUOMTkNHjTZBNUsXl0tYXuRNpZtA&index=7'},{'title':'Photek - ni ten ichi ryu','url':'https://www.youtube.com/watch?v=9qJKxaWb0_A'},{'title':'Hush Hush - I%27ll Give You A Feeling','url':'https://www.youtube.com/watch?v=I2ERvKwCU4Y&feature=youtu.be'},{'title':'DeepChord - Departure','url':'https://www.youtube.com/watch?v=n9pjQfh0Zvg'},{'title':'Slam %u200E- Dark Forces [Soma 45]','url':'https://www.youtube.com/watch?v=g_bGKtzGLRA'},{'title':'Shifty - Jazz Ass','url':'https://www.youtube.com/watch?v=w6UWkmJVIp8'},{'title':'Overmono - So U Kno','url':'https://www.youtube.com/watch?v=SRVxRUJxITY'},{'title':'Garpo - DubD8','url':'https://www.youtube.com/watch?v=n3VWINRGiLo&feature=youtu.be'},{'title':'Basic Channel - Phylyps Trak','url':'https://www.youtube.com/watch?v=6a4HlgmlMuw&feature=youtu.be'}]}" ></script>
-<!-- SCM Music Player script end -->
-
-            <a href="index.html">
-<h2 style="position:relative; left:500px; color:#2B2D41; font-family:Comic Sans MS;"> I want to return home :'( </h2>       
-</a>
-        </body>
-
 <html>
+  <head>
+    <title>JS Counter - www.pakainfo.com</title>
+	<style>
+	.main_container {
+	  height: 46px;
+	  width: auto;
+	  padding: 3px;
+	  margin: 2px;
+	  max-width: 300px;
+	  background-color: #555555;
+	  align-content: center;
+	}
+	.container_inner {
+	  height: auto;
+	  border: none;
+	  background-color: #555555;
+	  max-width: 290px;
+	  vertical-align: center;
+	  padding-top: 12px;
+	  padding-left: 10px;
+	  align-content: center;
+	}
+	 .live_cnt {
+	  width:30px;
+	  height: 30px;
+	  background-color: #888888;
+	  color: #ffffff;
+	  font-size: 22px;
+	  text-align: center;
+	  line-height: 20px;
+	  padding: 3px;
+	  margin: 1.5px;
+	  font-family: verdana;
+	  vertical-align: center;
+	}
+	</style>
+  </head>
+
+  <body onload="CounterVisitor(10)">
+    <div class="main_container" id="id_main_container">
+      <div class="container_inner" id="display_div_id">
+      </div>
+    </div>
+  </body>
+
+ <script>
+  var total_visitor_list = [10,10000,10000];
+  var visitor_cnt_0 = total_visitor_list[0];
+  var visitor_cnt_1 = total_visitor_list[1];
+  var visitor_cnt_2 = total_visitor_list[2];
+  var result_data = "";
+  var display_div = document.getElementById("display_div_id");
+
+  function CounterVisitor(current_count){
+    setInterval(function(){
+      // clear count
+      while (display_div.hasChildNodes()) {
+          display_div.removeChild(display_div.lastChild);
+      }
+      visitor_cnt_0++;
+      if (visitor_cnt_0 > 99) {
+        visitor_cnt_0 = 10; // reset count
+        visitor_cnt_1++;    // increase next count
+      }
+      if(visitor_cnt_1>99999){
+        visitor_cnt_2++;
+      }
+      result_data = visitor_cnt_2.toString() + visitor_cnt_1.toString() + visitor_cnt_0.toString();
+      for (var i = 0; i < result_data.length; i++) {
+        var live_flag = document.createElement('span');
+        live_flag.className = 'live_cnt';
+        live_flag.innerText = result_data[i];
+        display_div.appendChild(live_flag);
+      }
+    },1000);
+  }
+</script> 
+</html>
